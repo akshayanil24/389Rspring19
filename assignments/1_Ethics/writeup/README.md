@@ -1,7 +1,7 @@
 # Writeup 1 - Ethics
 
-Name: *PUT YOUR NAME HERE*
-Section: *PUT YOUR SECTION NUMBER HERE*
+Name: Akshay Anil
+Section: 0201
 
 I pledge on my honor that I have not given or received any unauthorized assistance on this assignment or examniation.
 
