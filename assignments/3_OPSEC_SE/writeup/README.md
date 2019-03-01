@@ -1,8 +1,11 @@
 # Writeup 3 - Operational Security and Social Engineering
 
 Name: Akshay Anil
+
 Section: 0201
+
 I pledge on my honor that I have not given or received any unauthorized assistance on this assignment or examniation.
+
 Digital acknowledgement: Akshay Anil
 
 ## Assignment Writeup
