@@ -1,18 +1,27 @@
 # Writeup 3 - Operational Security and Social Engineering
 
-Name: *PUT YOUR NAME HERE*
-Section: *PUT YOUR SECTION NUMBER HERE*
+Name: Akshay Anil
+
+Section: 0201
 
 I pledge on my honor that I have not given or received any unauthorized assistance on this assignment or examniation.
 
-Digital acknowledgement: *PUT YOUR NAME HERE*
+Digital acknowledgement: Akshay Anil
 
 ## Assignment Writeup
 
 ### Part 1 (40 pts)
 
-*Replace this text with your repsonse to our prompt for part 1!*
+>You have been hired by a penetration testing firm and have been asked to collect some specific information about the 1337Bank employee from HW2, Elizabeth Moffet. Some of the information you're looking for seems to be unavailable or unlikely to be found through OSINT: What's her mother's maiden name? What browser does she primarily use? What city was she born in? What's her ATM pin number? What was the name of her first pet?
+Write up a pretext that you would use to social engineer this information out of Elizabeth Moffet. What approach would you take and how would you present yourself to elicit this information under the radar? Use the slides and what we covered in lecture to come up with a plan to obtain this information.
 
+I would pose as an customer service from a bank. The spoofed phone conversation would start off with me notifying Elizabth of unusual activity on her debit card. I would fabricate random purchases from retail stores in her hometown. Using the information available through OSINT, I would build my reputation by asking her to confirm facts about herself. Second, I would ask her to provide her mother's maiden name, first pet's name, and city of birth to validate that she is who she claims to be. Once she has "confirmed" her identity, I would go over possible ways that her account was compromised and how to prevent it from happening again. Because the money was taken directly from her account, I would advise her to change her ATM pin number. I would tell her that I need to confirm her pin before I am able to change it. The phone call would include realistic pauses as I "search through the records" and "file some notes." Now the only thing left to know is the browser she uses. For this, I would tell her that I am opening an investigation to resolve the issue and will hopefully be able to re-credit her account. Elizabeth will need to log into her bank account to view the status of the investigation. I would ask her which browser she used, because "only certain browsers display the status properly." If she says "Chrome," I will say that should be fine and to wait 48 hours for changes to appear. This allows me to end the call normally as well as give me padding to use her information.
+
+- - - -
 ### Part 2 (60 pts)
 
-*Replace this text with your repsonse to our prompt for part 1!*
+>Elizabeth Moffet has recently discovered that 1337Bank's web server has been broken into by the crafty CMSC389R ethical hackers. After reading your published report, she has reached out to you to seek guidance in how she can repair some of the vulnerabilities that you have discovered. Choose 3 specific vulnerabilities from homework 2 that you have identified (ie. exposed ports, weak passwords, etc.) and write a brief summary of some suggestions you can provide Elizabeth for the 1337Bank web server and admin server. Be as thorough as possible in your answer, use specific examples and citing online research into security techniques that could be applied to the servers (ie. firewall, IDS/IPS, password managers, etc.).
+
+One of the issues that Elizabeth ran into was having a weak password protecting her server. The CMSC389R hackers were able to bruteforce their way in by iterating through a list of most common passwords (`rockyou.txt`). This issue can be fixed through multiple layers. For example, Elizabeth could use a password manager such as LastPass to generate and store complex passwords. Services like these provide multifactor authentication to ensure that you know your passwords are being accessed. Additionally, programs like LastPass can [identify weak passwords](https://www.pcmag.com/review/317662/lastpass) so that Elizabeth won't make that mistake again. 
+In addition to opting for password managers, Elizabeth should set password attempt limits before a timeout, IP ban, or a user challenge. The password associtated with the account `v0idcache` on her server was `linkinpark`. `rockyou.txt` has millions of passwords in alphabetical order, yet the hackers were able to reach the letter 'l' without any hinderance from the server. Timeouts and IP bans will give Elizabeth time to shut down open ports before hackers can exploit the vulnerabilities in her server. Advanced hackers can still get around these roadblocks through wait commands and VPNs, but it should deter simpler attacks. These advanced hackers can be slowed through the [implementation of user-challenges](https://www.computerweekly.com/answer/Techniques-for-preventing-a-brute-force-login-attack). The server can request that users respond to prompts that are difficult to solve through automation. An example of this is the widespread implementation of reCAPTCHA on popular websites. 
+From what I can tell, port 1337 gives users access to the server with elevated privileges. The only individuals who should be able to interact with the port are employees of 13/37th National Bank. As such, Elizabeth should set up a firewall that blocks all connection attempts to port 1337 other than those from a set of whitelisted IPs. This is a [relatively simple process](https://www.codero.com/knowledge-base/content/24/435/en/how-to-whitelist-or-block-ips-in-your-firewall-on-linux-iptables-firewalld-ufw.html) on Linux, the operating system used by Elizabeth.
