@@ -55,28 +55,47 @@ This file was generated on **March 27, 2019** at **12:15:05 AM**.
 >List each section, giving us the data in it *and* its type.
 
 -SECTION 1-
+
 Length: 24
+
 Type: ASCII
+
 Value: Hey you, keep looking :)
 
+
 -SECTION 2-
+
 Length: 16
+
 Type: COORD
+
 Value: (52.336035, 4.880673)
 
+
 -SECTION 3-
+
 Length: 202776
+
 Type: PNG
+
 Value: Displayed in pop-up **(shows up when script is run)**
 
+
 -SECTION 4-
+
 Length: 44
+
 Type: ASCII
+
 Value: }R983CSMC_perg_tndid_u0y_yllufep0h{-R983CSMC
 
+
 -SECTION 5-
+
 Length: 80
+
 Type: ASCII
+
 Value: Q01TQzM4OVIte2hleV9oM3lfeTBVX3lvdV9JX2RvbnRfbGlrZV95b3VyX2Jhc2U2NF9lbmNvZGluZ30=
 
 
