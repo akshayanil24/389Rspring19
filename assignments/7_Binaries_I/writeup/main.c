@@ -23,4 +23,6 @@ int main()
 
   printf("%s\n", dword2);
   printf("%s\n", dword1);
+  
+  return 0;
 }
